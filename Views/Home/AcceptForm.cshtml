@@ -1,0 +1,44 @@
+﻿@{
+
+}
+@using p3.Models
+@using System.Linq
+@model System.Collections.ArrayList
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Schrchp</title>
+    <link href="/Content/bootst.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.js"></script>
+</head>
+<body>
+
+    <div class="row" style="color:white; font-family:'Comic Sans MS'">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-8">
+            <h1 >Congrates @Session["Name"]</h1>
+
+
+        </div>
+
+
+        <div class="row" style="color:white; font-family:'Comic Sans MS'">
+            <div class="col-xs-4">
+
+            </div>
+
+            <div class="col-xs-4">
+
+                <h1>You are Addmitted in LGS.</h1>
+                <h1> Now you are the Student of LGS.</h1>
+                <h3>You are Roll No. is @Session["UId"] </h3>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

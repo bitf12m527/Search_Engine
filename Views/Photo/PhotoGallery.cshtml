@@ -1,0 +1,41 @@
+﻿@{
+  Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@using p3.Models
+@using System.Linq
+@model System.Collections.ArrayList
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Photo Gallery</title>
+    <link href="/Content/bootst.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.js"></script>
+</head>
+<body>
+
+    <div class="row" style="color: #ffffff">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <h1 style="color: #ffffff">@Session["Album"] Album</h1>
+          </div></div>
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            @foreach (Photo p in Model)
+        {
+                <br><br>
+                <img src="/img/@p.imgName"></img>
+                        <form role="form" action="DeletePhoto" method="post">
+                            <input type="hidden" value="@p.Id" name="id" class="form-control">
+                            <button type="submit" class="btn btn-default">Delete</button>
+                        </form>
+              
+        }
+            </div>
+
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+﻿@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@using p3.Models
+@using System.Linq
+@model System.Collections.ArrayList
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddmissionForm</title>
+    <link href="/Content/bootst.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.js"></script>
+</head>
+<body>
+    
+    <table border="1" style="color:white; font-family:'Comic Sans MS'">
+        <thead>
+            <tr class="btn-primary" style="text-align:center">
+
+                <th>Form No </th>
+                <th>Student Name </th>
+                <th>Father Name </th>
+                <th>Date of Birth </th>
+                <th>Contact No </th>
+                <th>Email </th>
+                <th>Class </th>
+                <th>Address </th>
+                <th>Accept </th>
+                <th>Delete </th>
+
+            </tr>
+        </thead>
+
+
+        @foreach (Admission a in Model)
+        {
+            <tr>
+                <td> <h3>  @a.FormNo </h3> </td>
+                <td> <h3>  @a.Name</h3> </td>
+                <td> <h3>  @a.FatherName </h3> </td>
+                <td> <h3>  @a.DateofBirth </h3> </td>
+                <td> <h3>  @a.ContactNo</h3> </td>
+                <td> <h3>  @a.Email </h3> </td>
+                <td> <h3>  @a.Class </h3> </td>
+                <td> <h3>  @a.Address </h3> </td>
+                <td>
+
+                    <form role="form" action="AddForms" method="post">
+                        <input type="hidden" value="@a.FormNo" name="id" class="form-control">
+                        <input type="hidden" value="@a.Name" name="sn" class="form-control">
+                        <input type="hidden" value="@a.FatherName" name="fn" class="form-control">
+                        <input type="hidden" value="@a.DateofBirth" name="dob" class="form-control">
+                        <input type="hidden" value="@a.ContactNo" name="cn" class="form-control">
+                        <input type="hidden" value="@a.Address" name="ad" class="form-control">
+                        <input type="hidden" value="@a.Class" name="cl" class="form-control">
+                        <input type="hidden" value="@a.Email" name="em" class="form-control">
+
+                        <button type="submit" class="btn btn-default">Accept</button>
+                    </form>
+
+                </td>
+
+                <td>
+
+                    <form role="form" action="DeleteForm" method="post">
+                        <input type="hidden" value="@a.Id" name="id" class="form-control">
+                        <button type="submit" class="btn btn-default"> Delete </button>
+                    </form>
+                </td>
+
+            </tr>
+        }
+    </table>
+
+
+
+
+           
+
+
+</body>
+</html>

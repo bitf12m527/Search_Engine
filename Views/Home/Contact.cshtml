@@ -1,0 +1,120 @@
+﻿@{
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Contact</title>
+    <link href="/Content/bootst.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.js"></script> 
+
+</head>
+<body>
+
+
+    <div class="row" style="color:white; font-family:'Comic Sans MS'">
+        <div class="col-xs-4">
+
+        </div>
+
+        <div class="col-xs-4">
+
+            <center>
+
+                <h1 style="color:white; font-family:'Comic Sans MS'">Contact Us</h1>
+                <form role="form" action="/Home/AddMsg" method="post">
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Name  </span>
+                        <input type="text" name="name" class="form-control" placeholder=" your name " aria-describedby="basic-addon1">
+                    </div>
+
+                    <br> <br>
+
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Email  </span>
+                        <input type="text" name="email" class="form-control" placeholder=" your email address" aria-describedby="basic-addon1">
+                    </div>
+
+                    <br> <br>
+
+                    <div class="input-group">
+
+                        <textarea rows="7" name="msg" cols="60" placeholder="what you want to say ?"></textarea>
+
+                    </div>
+
+                    <br> <br>
+
+                    <button type="submit" class="btn btn-warning bgcolor pull-right">Send</button>
+
+                </form>
+
+            </center>
+
+        </div>
+
+
+        <div class="col-xs-4">
+
+        </div>
+
+    </div>
+
+
+
+    <div class="row" style="color:white; font-family:'Comic Sans MS'">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-8">
+
+            <section class="contact">
+                <header>
+                    <h3>Mobile no.</h3>
+                </header>
+                <p>
+                    <span class="label">Main:</span>
+                    <span>0344 4337232</span>
+                </p>
+                <p>
+                    <span class="label">Supporting:</span>
+                    <span>0335 4713426</span>
+                </p>
+            </section>
+
+            <section class="contact" style="color: #ffffff">
+                <header>
+                    <h3>Email</h3>
+                </header>
+                <p>
+                    <span class="label">General:</span>
+                    <span><a href="mailto:bitf12m527@pucit.edu.pk">bitf12m527@pucit.edu.pk</a></span>
+                </p>
+                <p>
+                    <span class="label">Marketing:</span>
+                    <span><a href="mailto:asima811@yahoo.com">asima811@yahoo.com</a></span>
+                </p>
+
+            </section>
+
+            <section class="contact" style="color:white; font-family:'Comic Sans MS'">
+
+                <header>
+                    <h3>Address</h3>
+                </header>
+                <p>
+                    Himmay wal p/o khas <br />
+                    Tehsile & District Kasur.
+                </p>
+
+            </section>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="73b47e0e877141cbaa99f1f4d6ebf693" Name="Diagram1">
+        <EntityTypeShape EntityType="DatabaseModel.Admission" Width="1.5" PointX="0.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Contact" Width="1.5" PointX="2.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Event" Width="1.5" PointX="0.625" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Scholorship" Width="1.5" PointX="5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Student" Width="1.5" PointX="2.5" PointY="3.5" />
+        <EntityTypeShape EntityType="DatabaseModel.Photo" Width="1.5" PointX="4.875" PointY="5.75" />
+        <EntityTypeShape EntityType="DatabaseModel.Album" Width="1.5" PointX="4.875" PointY="3.5" />
+        <AssociationConnector Association="DatabaseModel.sad" />
+        <EntityTypeShape EntityType="DatabaseModel.User" Width="1.5" PointX="0.5" PointY="0.5" />
+        <AssociationConnector Association="DatabaseModel.Kl" />
+        <AssociationConnector Association="DatabaseModel.FK_Contact_Users" />
+        <AssociationConnector Association="DatabaseModel.asdf" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

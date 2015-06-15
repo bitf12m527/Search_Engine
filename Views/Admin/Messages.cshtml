@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@using p3.Models
+@using System.Linq
+@model System.Collections.ArrayList
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddEvent</title>
+    <link href="/Content/bootst.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.js"></script>
+</head>
+<body>
+    <div style="color:white; font-family:'Comic Sans MS'">
+
+        <div class="row">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-10">
+                <table border="1" >
+                    <thead>
+                        <tr class="btn-primary" >
+
+                            <th>Message No </th>
+                            <th>Sender Name </th>
+                            <th>Message </th>
+                            <th>Delete </th>
+                        </tr>
+                    </thead>
+
+                    @foreach (Contact c in Model)
+                    {
+                        <tr>
+                            <td> <h3>@c.Id </h3> </td>
+                            <td><h3>  @c.VName</h3> </td>
+                            <td><h3>  @c.VMessage </h3> </td>
+                            <td>
+
+                                <form role="form" action="DeleteMessage" method="post">
+                                    <input type="hidden" value="@c.Id" name="id" class="form-control">
+                                    <button type="submit" class="btn btn-default">Delete</button>
+                                </form>
+
+                            </td>
+                        </tr>
+                    }
+                </table>
+
+            </div>
+
+</body>
+</html>

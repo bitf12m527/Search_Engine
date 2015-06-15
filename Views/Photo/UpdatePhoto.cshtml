@@ -1,0 +1,90 @@
+﻿@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@using p3.Models
+@using System.Linq
+@model System.Collections.ArrayList
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update Photo Gallery</title>
+    <link href="/Content/bootst.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.js"></script>
+</head>
+<body>
+
+    <div class="row" style="color:white; font-family:'Comic Sans MS'">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-8">
+            <table border="1" style="color:white; font-family:'Comic Sans MS'">
+                <thead>
+                    <tr class="btn-primary" style="text-align:center">
+
+                        <th>Album Name</th>
+                        <th>Add Photo </th>
+                        <th>Delete Album </th>
+
+                    </tr>
+                </thead>
+
+
+                @foreach (Album a in Model)
+            {
+            <tr>
+
+                <td>
+                    <form role="form" action="PhotoGallery" method="post">
+                        <input type="hidden" value="@a.Id" name="id" class="form-control">
+                        <button type="submit" class="btn btn-default">@a.AlbumName</button>
+                    </form>
+                </td>
+                <td>
+                    <form role="form" action="UploadingPhoto" method="post" enctype="multipart/form-data">
+                        <br>
+                        <input type="file" name="imgName" value="upload" required />
+                        <input type="hidden" value="@a.Id" name="id" class="form-control">
+
+                        <button type="submit" class="btn btn-default pull-right">Add</button>
+                    </form>
+
+                </td>
+
+                <td>
+                    <form role="form" action="DeleteAlbum" method="post">
+                        <input type="hidden" value="@a.Id" name="id" class="form-control">
+                       <button type="submit" class="btn btn-default">Delete</button>
+                    </form>
+                </td>
+
+            </tr>
+            }
+
+            </table>
+        </div>
+        </div>
+   
+     <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-xs-6" style="color:white; font-family:'Comic Sans MS'">
+        <h3 style="color:white; font-family:'Comic Sans MS'">For Adding New Album </h3>
+
+        <form role="form" action="AddAlbum" method="post" enctype="multipart/form-data">
+
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Album Name  </span>
+                <input type="text" name="AlbumName" class="form-control" placeholder="Sports" aria-describedby="basic-addon1" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-default pull-right">Add Album</button>
+        </form>
+
+    </div>
+
+        </div>
+
+
+
+</body>
+</html>

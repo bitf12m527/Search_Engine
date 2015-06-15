@@ -1,0 +1,50 @@
+﻿@using p3.Models
+@using System.Linq
+@model System.Collections.ArrayList
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Events</title>
+    <link href="/Content/bootst.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.js"></script>
+</head>
+<body>
+   
+  
+               
+    <div style="color:white; font-family:'Comic Sans MS'">
+        <div class="row">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-8">
+                <table border="1" style="color:white; font-family:'Comic Sans MS'">
+                    <thead>
+                        <tr class="btn-primary" style="text-align:center">
+
+                            <th>Event No </th>
+                            <th>Date </th>
+                            <th>Description </th>
+
+                        </tr>
+                    </thead>
+                    @foreach (Event e in Model)
+                    {
+
+                        <tr>
+                            <td> <h3>@e.Id </h3></td>
+                            <td> <h3>@e.Date</h3></td>
+                            <td> <h3>@e.EventDescription</h3>
+                            <td>
+                        </tr>
+
+                    }
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+</html>

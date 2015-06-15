@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@using p3.Models
+@using System.Linq
+@model List<p3.Models.User>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search</title>
+    <link href="/Content/bootst.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.js"></script>
+</head>
+<body>
+   
+        <div class="row">
+            <div class="col-xs-4"></div>
+            <div class="col-xs-6">
+                @foreach (User u in Model)
+        {
+                    <h3 style="color:white; font-family:'Comic Sans MS'">  @u.UserName  </h3>
+        }
+                </div>
+                </div>
+</body>
+</html>

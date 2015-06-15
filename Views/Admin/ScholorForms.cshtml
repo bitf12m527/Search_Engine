@@ -1,0 +1,80 @@
+﻿@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@using p3.Models
+@using System.Linq
+@model System.Collections.ArrayList
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddEvent</title>
+    <link href="/Content/bootst.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.js"></script>
+</head>
+<body>
+
+    <table border="1" style="color:white; font-family:'Comic Sans MS'">
+        <thead>
+            <tr class="btn-primary" style="text-align:center">
+
+                <th>Form No </th>
+                <th>Student Name </th>
+                <th>Father Name </th>
+                <th>Date of Birth </th>
+                <th>Contact No </th>
+                <th>Email </th>
+                <th>Class </th>
+                <th>Address </th>
+                <th>Accept </th>
+                <th>Delete </th>
+
+            </tr>
+        </thead>
+
+
+        @foreach (Scholorship a in Model)
+        {
+            <tr>
+                <td> <h3>  @a.Id </h3> </td>
+                <td> <h3>  @a.StdName</h3> </td>
+                <td> <h3>  @a.FName </h3> </td>
+                <td> <h3>  @a.AnnualExpenses </h3> </td>
+                <td> <h3>  @a.AnnualIncome</h3> </td>
+                <td> <h3>  @a.FOccupation </h3> </td>
+                <td> <h3>  @a.FContact </h3> </td>
+
+                <td>
+
+                    <form role="form" method="post">
+                        <input type="hidden" value="@a.Id" name="id" class="form-control">
+                        <input type="hidden" value="@a.StdName" name="sn" class="form-control">
+                        <input type="hidden" value="@a.FName" name="fn" class="form-control">
+                        <input type="hidden" value="@a.AnnualIncome" name="dob" class="form-control">
+                        <input type="hidden" value="@a.AnnualExpenses" name="cn" class="form-control">
+                        <input type="hidden" value="@a.FOccupation" name="ad" class="form-control">
+                        <input type="hidden" value="@a.FContact" name="cl" class="form-control">
+
+                        <button type="submit" class="btn btn-default">Accept</button>
+                    </form>
+
+                </td>
+
+                <td>
+
+                    <form role="form" action="DeleteForm" method="post">
+                        <input type="hidden" value="@a.Id" name="id" class="form-control">
+                        <button type="submit" class="btn btn-default"> Delete </button>
+                    </form>
+                </td>
+
+            </tr>
+        }
+    </table>
+
+
+
+</body>
+</html>
